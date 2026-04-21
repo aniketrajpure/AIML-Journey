@@ -1,0 +1,22 @@
+def remove_duplicate_element(arr):
+    if len(arr) == 0:
+        return 0
+        
+    arr.sort()   # needed
+    
+    i = 0
+        
+    for j in range(1, len(arr)):
+        if arr[i] != arr[j]:
+            i += 1
+            arr[i] = arr[j]   # fixed here
+    
+    return i + 1
+    
+
+arr = [10, 12, 9, 8, 34, 56, 78, 13, 10, 12, 34, 56, 78]
+
+length = remove_duplicate_element(arr)
+
+print('length is', length)
+print('array is', arr[:length])
